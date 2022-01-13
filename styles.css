@@ -84,6 +84,7 @@ main {
 main h1 {
     padding: 1em 0;
     text-align: center;
+    font-size: 2.2em;
 }
 
 #hero {
@@ -128,8 +129,7 @@ main h1 {
     box-shadow: -.8em .8em 0px #744300;
 }
 
-figcaption {
-    /* margin-top: 1em; */
+#about figcaption {
     text-align: center;
     transform: rotate(90deg) translate(-170px, -130px);
     z-index: 3;
@@ -160,7 +160,7 @@ figcaption {
 }
 
 .rate-card article {
-    width: 300px;
+    width: 280px;
 }
 
 .rate-card h2,
@@ -218,15 +218,16 @@ figcaption {
     flex-direction: column;
 }
 
+.btn {
+    padding: .5em;
+    border: none;
+}
+
 .read-more {
     position: absolute;
     bottom: .2em;
     right: 50%;
     transform: translateX(50%);
-    padding: .5em;
-    /* border: 1px solid #744300;
-    border: 1px solid #000018; */
-    border: none;
     transition: all 500ms ease-in-out;
 }
 
@@ -235,4 +236,97 @@ figcaption {
     background-color: transparent;
     border: 1px solid #744300;
     color: #fff;
+}
+
+#consultation article {
+    background-color: #744300;
+    padding: 2em 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#consultation article p {
+    font-size: 1.8em;
+    padding-right: 1em;
+}
+
+#consultation form {
+    padding: 2em;
+    flex-direction: column;
+}
+
+#consultation label {
+    display: block;
+    padding: .5em 0 0 .3em;
+}
+
+#name,
+#email,
+#message {
+    padding: .4em;
+    border: 1px solid #000018;
+    outline-color: #744300;
+    border-radius: 2px;
+}
+
+#submit {
+    border: none;
+    cursor: pointer;
+    padding: .7em .9em;
+    border-radius: 20px;
+    color: #fff;
+    width: 100%;
+    background-color: #744300;
+    margin-top: 1em;
+}
+
+#news section {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 1em;
+    place-items: center;
+}
+
+#news article {
+    width: 250px;
+    height: 270px;
+    border: 1px solid #744300;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+#news img {
+    width: 100%;
+    height: 180px;
+    transition: all 300ms ease-in-out;
+}
+
+#news div {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 90px;
+    padding: 0 1em;
+}
+
+#news h4 {
+    text-decoration: underline;
+}
+
+.more-news {
+    background-color: #000018;
+    color: #fff;
+    float: right;
+    transform: translateY(calc(100% + 1em));
+    transition: transform 400ms ease-in-out;
+}
+
+#news article:hover .more-news {
+    transform: translateY(0);
+}
+
+#news article:hover img {
+    opacity: 0.9;
 }
