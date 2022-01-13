@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Acme&family=Island+Moments&family=Open+Sans:ital,wght@0,300;1,300&display=swap');
 * {
     margin: 0;
     padding: 0;
@@ -6,6 +7,14 @@
 
 html {
     scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Open Sans', serif;
+}
+
+h1 {
+    font-family: 'Acme', serif;
 }
 
 a {
@@ -24,8 +33,11 @@ ul {
 
 header {
     background-color: rgb(238, 236, 236);
+}
+
+.heading-section {
     position: relative;
-    padding-bottom: 1em;
+    padding: 1em 0;
 }
 
 #top-banner {
@@ -54,12 +66,11 @@ header {
 
 .title h3 {
     font-size: 0.8em;
-    font-style: italic;
 }
 
 .main-nav {
     position: absolute;
-    top: 3.5em;
+    top: 2em;
     right: 3em;
 }
 
@@ -67,13 +78,35 @@ header {
     display: flex;
 }
 
+.main-nav ul li {
+    position: relative;
+}
+
 .main-nav ul li a {
     color: #744300;
     padding: .5em;
+    font-size: .9em;
 }
 
 .main-nav ul li a:hover {
     color: #000018;
+}
+
+.main-nav ul li::after {
+    position: absolute;
+    content: '';
+    bottom: -2px;
+    right: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #744300;
+    border-radius: 2px;
+    transform: scaleX(0);
+    transition: transform 300ms ease-in-out;
+}
+
+.main-nav ul li:hover::after {
+    transform: scaleX(1);
 }
 
 main {
@@ -113,6 +146,11 @@ main h1 {
     border: none;
     padding: 1em 2em;
     border-radius: 2px;
+    cursor: pointer;
+}
+
+.action:hover {
+    background-color: #744400ec;
 }
 
 #about .ceo-text {
@@ -131,10 +169,12 @@ main h1 {
 
 #about figcaption {
     text-align: center;
-    transform: rotate(90deg) translate(-170px, -130px);
+    /* transform: rotate(90deg) translate(-170px, -130px); */
+    transform: translateY(-50px);
     z-index: 3;
-    color: #ccc;
+    color: #fff;
     font: 3em italic bolder;
+    font-family: 'Island Moments', serif;
 }
 
 #about section {
@@ -211,7 +251,7 @@ main h1 {
 #practice-areas p {
     max-width: 150px;
     color: #fff;
-    font-size: 1em;
+    font-size: .8em;
 }
 
 #practice-areas article section {
@@ -221,6 +261,7 @@ main h1 {
 .btn {
     padding: .5em;
     border: none;
+    border-radius: 2px;
 }
 
 .read-more {
@@ -315,6 +356,10 @@ main h1 {
     text-decoration: underline;
 }
 
+#news p {
+    font-size: .8em;
+}
+
 .more-news {
     background-color: #000018;
     color: #fff;
@@ -329,4 +374,14 @@ main h1 {
 
 #news article:hover img {
     opacity: 0.9;
+}
+
+footer {
+    min-height: 50vh;
+    color: #fff;
+    background-color: #000018;
+    margin-top: 1em;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
 }
