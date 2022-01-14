@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Acme&family=Island+Moments&family=Open+Sans:ital,wght@0,300;1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Island+Moments&family=Open+Sans:ital,wght@0,300;1,300&family=Ubuntu:wght@300;400&display=swap');
 * {
     margin: 0;
     padding: 0;
@@ -14,7 +14,7 @@ body {
 }
 
 h1 {
-    font-family: 'Acme', serif;
+    font-family: 'Ubuntu', serif;
 }
 
 a {
@@ -183,6 +183,32 @@ main h1 {
     background-color: #744400ec;
 }
 
+#about-us {
+    /* min-height: 150vh; */
+}
+
+#about {
+    position: relative;
+    min-height: 600px;
+}
+
+#about .partner {
+    position: absolute;
+    top: 180px;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    clip-path: inset(0 0 100% 0);
+    transform-origin: top;
+    transition: 1s;
+}
+
+#about .partner.active {
+    clip-path: inset(0 0 0 0);
+    transform-origin: bottom;
+    z-index: -1;
+}
+
 #about .ceo-text {
     padding: 1em;
     display: flex;
@@ -232,7 +258,7 @@ main h1 {
     align-items: center;
     flex-wrap: wrap;
     background-color: #000018;
-    min-height: 150px;
+    height: 150px;
 }
 
 .rate-card article {
