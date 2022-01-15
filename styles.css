@@ -125,6 +125,7 @@ main h1 {
 
 #hero {
     min-height: 70vh;
+    padding: 1em;
     background-image: url('bgs/pexels-photo-8112107.jpeg');
     background-size: 100% 100%;
     background-color: #000018e0;
@@ -348,7 +349,7 @@ main h1 {
 
 #consultation article {
     background-color: #744300;
-    padding: 2em 0;
+    padding: 2em .4em;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -448,14 +449,14 @@ main h1 {
 }
 
 footer {
-    min-height: 30vh;
-    padding: 2em 0;
+    min-height: 10vh;
+    padding: 1em;
     color: #fff;
     background-color: #000;
     margin-top: 1em;
-    display: flex;
-    justify-content: space-evenly;
-    position: relative;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1em;
 }
 
 footer ul {
@@ -469,7 +470,7 @@ footer h6 {
 }
 
 footer form {
-    margin-top: 3em;
+    margin-top: 1em;
 }
 
 footer i {
@@ -507,4 +508,25 @@ footer i {
 
 footer button {
     padding: .2em;
+}
+
+@media (max-width:700px) {
+    .main-nav {
+        display: none;
+    }
+    #about .ceo-text {
+        flex-direction: column;
+    }
+    #practice-areas,
+    footer {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width:540px) {
+    #practice-areas,
+    #blog section,
+    footer {
+        grid-template-columns: repeat(1, 1fr);
+    }
 }
