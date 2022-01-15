@@ -37,7 +37,7 @@ button {
 }
 
 header {
-    background-color: rgb(238, 236, 236);
+    background-color: #0000186e;
 }
 
 .heading-section {
@@ -125,11 +125,12 @@ main h1 {
 
 #hero {
     min-height: 70vh;
-    background-image: url('bgs/pexels-photo-5669619.jpeg');
+    background-image: url('bgs/pexels-photo-8112107.jpeg');
     background-size: 100% 100%;
     background-color: #000018e0;
     color: #fff;
     background-blend-mode: darken;
+    background-attachment: fixed;
     overflow: hidden;
 }
 
@@ -211,18 +212,16 @@ main h1 {
 }
 
 #about img:hover {
-    transform: translateY(-2px);
     box-shadow: -.8em .8em 0px #744300;
 }
 
 #about figcaption {
     text-align: center;
-    transform: translateY(-50px);
-    z-index: 3;
+    transform: translate(120px, -150px) rotateZ(90deg);
+    z-index: 260;
     color: #fff;
     font: 2.45em italic;
     font-family: 'Island Moments', serif;
-    background-color: #000018;
 }
 
 #about section {
@@ -377,6 +376,7 @@ main h1 {
     border: 1px solid #000018;
     outline-color: #744300;
     border-radius: 2px;
+    width: 60vw;
 }
 
 #submit {
@@ -401,6 +401,7 @@ main h1 {
     width: 250px;
     height: 270px;
     border: 1px solid #744300;
+    border-radius: 3px;
     position: relative;
     cursor: pointer;
     overflow: hidden;
@@ -414,6 +415,7 @@ main h1 {
 
 #blog div {
     position: absolute;
+    background-color: #000018;
     bottom: 0;
     left: 0;
     height: 90px;
@@ -421,15 +423,16 @@ main h1 {
 }
 
 #blog h4 {
-    text-decoration: underline;
+    color: #744300;
 }
 
 #blog p {
     font-size: .8em;
+    color: #fff;
 }
 
 .more-blog {
-    background-color: #000018;
+    background-color: #744300;
     color: #fff;
     float: right;
     transform: translateY(calc(100% + 1em));
@@ -445,11 +448,63 @@ main h1 {
 }
 
 footer {
-    min-height: 50vh;
+    min-height: 30vh;
+    padding: 2em 0;
     color: #fff;
-    background-color: #000018;
+    background-color: #000;
     margin-top: 1em;
     display: flex;
     justify-content: space-evenly;
-    align-items: center;
+    position: relative;
+}
+
+footer ul {
+    line-height: 1.5;
+}
+
+footer h3,
+footer h6 {
+    color: #744300;
+    padding-bottom: .5em;
+}
+
+footer form {
+    margin-top: 3em;
+}
+
+footer i {
+    padding-right: 0.4em;
+    color: #744300;
+}
+
+#quick-links li {
+    font-size: .9em;
+    padding-left: 1em;
+}
+
+#quick-links a {
+    color: #fff;
+    text-decoration: underline;
+}
+
+.to-top {
+    position: absolute;
+    top: -3em;
+    right: 1em;
+    background: transparent;
+    border: none;
+    outline: none;
+}
+
+.to-top i {
+    transform: scale(2);
+}
+
+#foot-email {
+    padding: .5em;
+    outline: none;
+}
+
+footer button {
+    padding: .2em;
 }
