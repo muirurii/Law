@@ -11,6 +11,7 @@ html {
 
 body {
     font-family: 'Quicksand', serif;
+    overflow-x: hidden;
 }
 
 h1 {
@@ -39,6 +40,7 @@ input[type="submit"] {
 
 header {
     background-color: #fbfbff;
+    position: relative;
 }
 
 .heading-section {
@@ -113,6 +115,83 @@ header {
     transform: scaleX(1);
 }
 
+.small-nav {
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    top: 144px;
+    background-color: #74440086;
+    backdrop-filter: blur(60px);
+    transform: translateX(-100%);
+    transition: transform 1s ease-in-out;
+    z-index: 100;
+    display: none;
+}
+
+.small-nav.show {
+    transform: translateX(0);
+}
+
+.small-nav ul {
+    padding: 2em;
+    line-height: 1.5;
+}
+
+.small-nav a {
+    color: #ffffff;
+}
+
+.hamburger {
+    cursor: pointer;
+    height: 4px;
+    width: 26px;
+    background-color: #744300;
+    position: absolute;
+    top: 154px;
+    right: 1em;
+    z-index: 200;
+    display: none;
+}
+
+.hamburger::after,
+.hamburger::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: inherit;
+    transition: transform, 300ms ease-in-out;
+}
+
+.hamburger::after {
+    top: -6px;
+}
+
+.hamburger::before {
+    bottom: -6px;
+}
+
+.hamburger.closed {
+    background-color: transparent;
+}
+
+.hamburger.closed::after,
+.hamburger.closed::before {
+    height: 60%;
+    width: 75%;
+    top: 0px;
+    bottom: 0px;
+    background-color: #ff0000;
+}
+
+.hamburger.closed::after {
+    transform: rotate(45deg);
+}
+
+.hamburger.closed::before {
+    transform: rotate(-45deg);
+}
+
 main {
     min-height: 100vh;
     width: 100%;
@@ -127,9 +206,9 @@ main h1 {
 #hero {
     min-height: 70vh;
     padding: 1em;
-    background-image: url('bgs/pexels-photo-8112107.jpeg');
+    background-image: url('https://images.pexels.com/photos/4427626/pexels-photo-4427626.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500');
     background-size: 100% 100%;
-    background-color: #000018e0;
+    background-color: #000018b2;
     color: #fff;
     background-blend-mode: darken;
     background-attachment: fixed;
@@ -520,6 +599,10 @@ footer button {
 @media (max-width:700px) {
     .main-nav {
         display: none;
+    }
+    .hamburger,
+    .small-nav {
+        display: block;
     }
     #about .ceo-text {
         flex-direction: column;

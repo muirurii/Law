@@ -1,16 +1,20 @@
 //Slider
 const partners = document.querySelectorAll('.partner');
 
-document.querySelector('.next').addEventListener('click', () => {
+const nextPartner = () => {
     const active = document.querySelector('.active');
     active.classList.remove('active');
-    active.nextElementSibling ? active.nextElementSibling.classList.add('active') : partners[0].classList.add('active')
-});
+    active.nextElementSibling ? active.nextElementSibling.classList.add('active') : partners[0].classList.add('active');
+}
+document.querySelector('.next').addEventListener('click', nextPartner);
+
 document.querySelector('.previous').addEventListener('click', () => {
     const active = document.querySelector('.active');
     active.classList.remove('active');
     active.previousElementSibling ? active.previousElementSibling.classList.add('active') : partners[1].classList.add('active')
 });
+
+setInterval(nextPartner, 60000);
 
 //Rate card number effect
 
@@ -52,3 +56,15 @@ cards.forEach(card => {
 document.querySelector('.to-top').addEventListener('click', () => {
     window.scrollTo(0, 0);
 });
+
+//hamburger
+const smallMenu = document.querySelector('.small-nav');
+document.querySelector('.hamburger').addEventListener('click', (e) => {
+    if (!e.target.classList.contains('closed')) {
+        smallMenu.classList.add('show');
+        e.target.classList.add('closed');
+    } else {
+        smallMenu.classList.remove('show');
+        e.target.classList.remove('closed');
+    }
+})
