@@ -1,3 +1,4 @@
+//Slider
 const partners = document.querySelectorAll('.partner');
 
 document.querySelector('.next').addEventListener('click', () => {
@@ -11,6 +12,8 @@ document.querySelector('.previous').addEventListener('click', () => {
     active.previousElementSibling ? active.previousElementSibling.classList.add('active') : partners[1].classList.add('active')
 });
 
+//Rate card number effect
+
 const cards = document.querySelectorAll('.rate-card article');
 const numbers = {
     clients: 2000,
@@ -22,26 +25,30 @@ const numberIncrement = (element, finalValue) => {
     for (let i = 0; i <= finalValue; i++) {
         setTimeout(() => {
             element.textContent = i;
-        }, 100);
+        }, 50);
     }
 }
 
 const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
-            const element = entry.target.querySelector('.numbers')
-            const name = element.getAttribute('data-name')
-            const value = numbers[name];
-            numberIncrement(element, value);
+            const element = entry.target.querySelector('.numbers');
+            const name = element.getAttribute('data-name');
+            const finalValue = numbers[name];
+            numberIncrement(element, finalValue);
         } else {
             entry.target.querySelector('.numbers').textContent = 1;
         }
     })
-
 }, {
     threshold: 0.3
 });
 
 cards.forEach(card => {
     observer.observe(card);
+});
+
+//To top
+document.querySelector('.to-top').addEventListener('click', () => {
+    window.scrollTo(0, 0);
 });

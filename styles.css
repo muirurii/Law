@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Island+Moments&family=Open+Sans:ital,wght@0,300;1,300&family=Ubuntu:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Island+Moments&family=Quicksand:wght@300&family=Righteous&display=swap');
 * {
     margin: 0;
     padding: 0;
@@ -10,11 +10,11 @@ html {
 }
 
 body {
-    font-family: 'Open Sans', serif;
+    font-family: 'Quicksand', serif;
 }
 
 h1 {
-    font-family: 'Ubuntu', serif;
+    font-family: 'Righteous', serif;
 }
 
 a {
@@ -25,7 +25,8 @@ ul {
     list-style: none;
 }
 
-button {
+button,
+input[type="submit"] {
     cursor: pointer;
     font-family: inherit;
 }
@@ -37,7 +38,7 @@ button {
 }
 
 header {
-    background-color: #0000186e;
+    background-color: #fbfbff;
 }
 
 .heading-section {
@@ -457,6 +458,12 @@ footer {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 1em;
+    position: relative;
+}
+
+footer address {
+    font-style: normal;
+    padding-left: 2em;
 }
 
 footer ul {
@@ -490,8 +497,8 @@ footer i {
 
 .to-top {
     position: absolute;
-    top: -3em;
-    right: 1em;
+    top: -2em;
+    right: .5em;
     background: transparent;
     border: none;
     outline: none;
@@ -521,6 +528,9 @@ footer button {
     footer {
         grid-template-columns: repeat(2, 1fr);
     }
+    .more-blog {
+        transform: unset;
+    }
 }
 
 @media (max-width:540px) {
@@ -528,5 +538,8 @@ footer button {
     #blog section,
     footer {
         grid-template-columns: repeat(1, 1fr);
+    }
+    footer address {
+        padding-left: 0em;
     }
 }
