@@ -52,9 +52,10 @@ cards.forEach(card => {
     observer.observe(card);
 });
 
-//To top
-document.querySelector('.to-top').addEventListener('click', () => {
-    window.scrollTo(0, 0);
+// CTA
+document.querySelector('.action').addEventListener('click', () => {
+    const heightTo = document.querySelector('#consultation').offsetTop;
+    window.scrollTo(0, heightTo);
 });
 
 //hamburger
@@ -67,4 +68,4 @@ document.querySelector('.hamburger').addEventListener('click', (e) => {
         smallMenu.classList.remove('show');
         e.target.classList.remove('closed');
     }
-})
+});
